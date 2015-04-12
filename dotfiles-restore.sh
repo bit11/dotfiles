@@ -8,9 +8,9 @@
 set -e
 
 # zsh stuff
-git clone --recursive https://github.com/bit11/prezto.git "${ZDOTDIR:-$HOME}/dotfiles/zprezto"
+git clone --recursive https://github.com/bit11/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/dotfiles/zprezto/runcoms/^README.md(.N); do
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
       ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
@@ -22,7 +22,7 @@ for file in $(ls); do
 done
 
 # Rest of the other dotfiles
-files="bash_profile bashrc gtkrc-2.0 vimrc xinitrc Xresources zprezto"
+files="bash_profile bashrc gtkrc-2.0 vimrc xinitrc Xresources"
 for file in $files; do
     ln -s $file $HOME/.$file
 done
