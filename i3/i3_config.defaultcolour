@@ -1,0 +1,161 @@
+#--------------------------------------------------------------------
+# i3 config file
+# ~/.i3/config
+# Updated 30 Dec 14
+#--------------------------------------------------------------------
+
+# define 'Win' as modkey
+set $mod Mod4
+
+# fonts
+font pango:FontAwesome, Berry 10
+
+# remove titlebar
+new_window 1pixel
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec urxvt
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+bindsym $mod+o split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+c focs child
+
+# define workspaces
+set $WS1 web
+set $WS2 docs
+set $WS3 work
+set $WS4 misc
+set $WS5 mail
+set $WS6 6
+set $WS7 7
+set $WS8 8
+set $WS9 9
+set $WS0 10
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS0
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS0
+
+# scratchpad
+for_window [instance="scratchpad"] move window to scratchpad, scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# application keybinds
+bindsym --release Print exec --no-startup-id scrot /media/data/Pictures/Screenshots/%Y-%m-%d-%T.png
+bindsym --release $mod+Print exec --no-startup-id scrot -s /media/data/Pictures/Screenshots/%Y-%m-%d-%T.png
+bindsym Control+0x03b exec --no-startup-id mpc play
+bindsym Control+0x027 exec --no-startup-id mpc stop
+bindsym Control+0x02e exec --no-startup-id mpc next
+bindsym Control+0x02c exec --no-startup-id mpc prev
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+bindsym $mod+Control+q exec thunderbird
+bindsym $mod+Control+w exec chromium
+bindsym $mod+Control+a exec matlab -desktop
+bindsym $mod+Control+r exec --no-startup-id urxvt -name scratchpad -e ranger
+bindsym $mod+Control+m exec --no-startup-id urxvt -name scratchpad -e ncmpcpp
+bindsym $mod+Control+n exec --no-startup-id urxvt -name scratchpad -e snownews
+bindsym $mod+Control+l exec --no-startup-id xset dpms force off ; slock
+bindsym $mod+Shift+p exec --no-startup-id systemctl poweroff
+bindsym $mod+Shift+s exec --no-startup-id systemctl suspend
+
+# assign applications to workspaces
+#assign [class="^Chromium$"] $WS1
+assign [class="^Thunderbird$"] $WS5
+assign [class="^MATLAB$"] $WS4
+assign [class="^com-mathworks-util-PostVMInit$" instance="^sun-awt-X11-XFramePeer$"] $WS4
+
+# reload configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace 
+bindsym $mod+Shift+r restart
+# exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window
+mode "resize" {
+
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # exit resize
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# i3bar
+bar {
+        output eDP1
+        status_command ~/bin/i3_conky.sh
+        position top
+        tray_output eDP1
+}

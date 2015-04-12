@@ -1,0 +1,31 @@
+! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
+! https://github.com/chriskempson/tomorrow-theme/blob/master/vim/colors/Tomorrow-Night.vim
+! vim: ft=xdefaults
+
+*background: #ffecec
+*foreground: #474747
+! black
+*color0: #ffecec
+*color8: #7E7F82
+! red
+*color1: #ac1919
+*color9: #CC6666
+! green
+*color2: #669900
+*color10: #B5BD68
+! yellow
+*color3: #DE935F
+*color11: #e6e600
+! blue
+*color4: #75a3ff
+*color12: #81A2BE
+! magenta
+*color5: #e2719a
+*color13: #B294BB
+! cyan
+*color6: #5E8D87
+*color14: #8ABEB7
+! white
+*color7: #ffffff
+*color15: #C5C8C6
+

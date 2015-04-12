@@ -1,0 +1,12 @@
+#-----------------------------------------------------------------
+# npmpcpp Keybindings File
+# ~/.ncmpcpp/bindings 
+# Refer to /usr/share/doc/ncmpcpp/bindings for all available options
+# Updated 14 Oct 14
+#-----------------------------------------------------------------
+
+def_key "delete"
+   delete_browser_items
+
+def_key "delete"
+   delete_stored_playlist

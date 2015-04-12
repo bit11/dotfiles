@@ -1,0 +1,49 @@
+!------------------------------------------------------------
+! Xresources Configuration File
+! ~/.Xresources
+! Reload settings with "xrdb ~/.Xresources"
+! Updated 23 Jul 14
+!-------------------------------------------------------------
+
+!! Cursor theme
+Xcursor.theme: bridge
+
+!! General Font Settings
+Xft.dpi:		96
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.rgba:		rgb
+Xft.autohint:   false
+Xft.hintstyle:  hintslight
+Xft.lcdfilter:  lcddefault
+
+!! URxvt Appearance Settings
+!!#include "colours/reddish.xresources"
+#include "colours/base16-atelierlakeside.light.256.xresources"
+!!URxvt*.transparent: true
+!!URxvt*.shading: 20 				!! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+
+
+URxvt.font: xft:Luculent:style=Regular:size=11, xft:Terminess Powerline:pixelsize=14
+URxvt.boldFont: xft:Luculent:style=Bold:size=11
+URxvt.letterSpace:  -1
+URxvt.scrollBar:    false
+
+!!URxvt.colorBD:    #CFCFCF
+!!URxvt.colorUL:    #A0A0A0
+!!URxvt.colorIT:    #686868
+
+!! URxvt Scroll
+URxvt*scrollTtyOutput:   false		!! Prevent scrolling with output
+URxvt*scrollWithBuffer:  true		!! Scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollTtyKeypress: true		!! Scroll back to the bottom on keypress
+
+!! URxvt Perl Extensions
+URxvt.perl-ext-common:      default,clipboard,matcher
+URxvt.url-launcher:         chromium
+URxvt.url-select.underline: true
+URxvt.matcher.button:       1
+URxvt.colorUL:              #4682B4
+URxvt.keysym.M-c:	        perl:clipboard:copy
+URxvt.keysym.M-v:	        perl:clipboard:paste
+URxvt.keysym.M-C-v:	        perl:clipboard:paste_escaped

@@ -1,0 +1,106 @@
+#--------------------------------------------------------------------
+# conky config for i3 bar
+# ~/.conkyrc
+# Updated 30 Dec 14
+#--------------------------------------------------------------------
+out_to_console yes
+out_to_stderr no
+out_to_x no
+background no
+update_interval 2
+
+TEXT
+[
+    #{ 
+    #    "full_text" : "  " ,
+    #    "color" : "\#990000" , 
+    #    "separator": false 
+    #},
+    { 
+        "full_text" : "${mpd_smart} " ,
+        "color" : "\#474747" ,
+        "separator": true
+    },
+\
+    { 
+        "full_text" : "  " ,
+        "color" : "\#990000" ,
+        "separator": false
+    },
+    { 
+        "full_text" : "${execp amixer get 'Master' | awk 'NR==5 {print $4}' | sed 's/[^0-9]*//g'}% " ,
+        "color" : "\#474747" ,
+        "separator": true
+    },
+\
+    { 
+        "full_text" : "  " ,
+        "color" : "\#990000" , 
+        "separator": false
+    },
+    { 
+        "full_text" : "${execp cat /sys/class/backlight/acpi_video0/brightness}% " ,
+        "color" : "\#474747" , 
+        "separator": true
+    },
+\
+    { 
+        "full_text" : "  " ,
+        "color" : "\#990000" ,
+        "separator": false
+    },
+    { 
+        "full_text" : "${loadavg 1} " ,
+        "color" : "\#474747" ,
+        "separator": true
+    },
+\
+    { 
+        "full_text" : "  " ,
+        "color" : "\#990000" ,
+        "separator": false
+    },
+    { 
+        "full_text" : "${mem}/${memmax} " ,
+        "color" : "\#474747" ,
+        "separator": true
+    },
+\
+    { 
+        "full_text" : "  " ,
+        "color" : "\#990000" ,
+        "separator": false
+    },
+    { 
+        "full_text" : "${acpitemp}°C " ,
+        "color" : "\#474747" ,
+        "separator": true
+    },
+\
+    { 
+        "full_text" : "  " ,
+        "color" : "\#990000" ,
+        "separator": false
+    },
+    { 
+        "full_text" : "${battery BAT1} ${battery_time BAT1} " ,
+        "color" : "\#474747" ,
+        "separator": true
+    },
+\
+    { 
+        "full_text" : "  " ,
+        "color" : "\#990000" ,
+        "separator": false
+    },
+    { 
+        "full_text" : "${time %a %d %b %Y %H:%M} " ,
+        "color" : "\#474747" ,
+        "separator": true
+    },
+    { 
+        "full_text" : "" ,
+        "color" : "\#474747" ,
+        "separator": true
+    }
+],

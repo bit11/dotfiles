@@ -1,0 +1,58 @@
+#-----------------------------------------------------------------
+# npmpcpp Configuration File
+# ~/.ncmpcpp/config 
+# Refer to /usr/share/doc/ncmpcpp/config for all available options
+# Updated 26 Jun 14
+#-----------------------------------------------------------------
+
+## General Config
+
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_music_dir = "/media/data/Music"
+mpd_connection_timeout = "5"
+mpd_crossfade_time = "1"
+
+## Column Settings
+
+song_columns_list_format = "(7f)[black]{l} (25)[blue]{a} (40)[red]{t|f} (30)[green]{b}"
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+
+## General Settings
+
+autocenter_mode = "yes"
+centered_cursor = "yes"
+##ncmpc_like_songs_adding = "yes"
+screen_switcher_mode = "previous"
+ask_for_locked_screen_width_part = "yes"
+ask_before_clearing_playlists = "yes"
+allow_for_physical_item_deletion = "yes"
+external_editor = "vim"
+use_console_editor = "yes"
+
+## Appearance Settings
+
+progressbar_look = "♪♪-"
+user_interface = "alternative"
+display_volume_level = "no"
+header_visibility = "no"
+statusbar_visibility = "no"
+titles_visibility = "no"
+display_bitrate = "yes"
+
+## Colour Definition
+
+colors_enabled = "yes"
+empty_tag_color = "cyan"
+header_window_color = "green"
+main_window_color = "blue"
+color1 = "black"
+color2 = "magenta"
+main_window_highlight_color = "red"
+progressbar_color = "red"
+statusbar_color = "red"
+alternative_ui_separator_color = "white"
+active_column_color = "red"

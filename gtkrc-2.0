@@ -1,0 +1,14 @@
+#-----------------------------------------
+# GTK-2.0 Config File
+# ~/.gtkrc-2.0
+# Last updated 26 Jun 14
+#-----------------------------------------
+
+#gtk-theme-name = "Trevilla-ThemeWhite"
+gtk-theme-name = "Libra"
+#gtk-theme-name = "Cinnamon-grey"
+#gtk-icon-theme-name = "ultra-flat-icons"
+gtk-icon-theme-name = "clarity-canus"
+gtk-can-change-accels=1
+
+gtk-recent-files-max-age=0
